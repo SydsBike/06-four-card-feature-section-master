@@ -251,6 +251,7 @@ body {
     justify-content: center;
     align-items: center;
     max-width: 660px;
+    max-height: 814px;
     margin: 0 auto;
   }
   .center {
@@ -266,6 +267,7 @@ body {
 @media (min-width: 1300px) {
   .primary-content-wrapper {
     max-width: 1114px;
+    max-height: 517px;
   }
   .center {
     max-width: max-content;
