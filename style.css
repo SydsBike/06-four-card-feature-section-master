@@ -250,6 +250,8 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    max-width: 660px;
+    margin: 0 auto;
   }
   .center {
     max-width: max-content;
@@ -257,10 +259,14 @@ body {
   }
   .card {
     max-width: 314px;
+    margin: 0;
   }
 }
 
 @media (min-width: 1300px) {
+  .primary-content-wrapper {
+    max-width: 1114px;
+  }
   .center {
     max-width: max-content;
     flex-direction: column;
