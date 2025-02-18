@@ -1,0 +1,273 @@
+/* Custom Properties */
+
+:root {
+  /* Base Font Size */
+  font-size: 16px;
+
+  /* Typography */
+
+  --ff-primary: "Poppins", serif;
+
+  --fs-13: 0.8125rem;
+  --fs-15: 0.9375rem;
+  --fs-20: 1.25rem;
+  --fs-fluid-24-36: clamp(1.5rem, 1.2359rem + 1.1268vw, 2.25rem);
+
+  --fw-200: 200;
+  --fw-400: 400;
+  --fw-600: 600;
+
+  /* Colors */
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+
+  --background: hsl(0, 0%, 98%);
+  --Grey-500: hsl(234, 12%, 34%);
+  --Grey-400: hsl(212, 6%, 44%);
+  --White: hsl(0, 0%, 100%);
+
+  --shadow: hsla(213, 47%, 67%, 0.5);
+
+  /* Spacing */
+
+  --sp-16: 1rem;
+  --sp-30: 1.875rem;
+  --sp-32: 2rem;
+  --sp-fluid-60-74: clamp(3.75rem, 3.4419rem + 1.3146vw, 4.625rem);
+}
+
+/* CSS Resets */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+html,
+body {
+  height: 100%;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.4;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Utility Classes */
+
+.fs-h1 {
+  font-size: var(--fs-fluid-24-36);
+  line-height: 140%;
+  letter-spacing: 0.25px;
+}
+
+.fs-15 {
+  font-size: var(--fs-15);
+}
+
+.fs-20 {
+  font-size: var(--fs-20);
+}
+
+.fw-200 {
+  font-weight: var(--fw-200);
+}
+
+.fw-600 {
+  font-weight: var(--fw-600);
+}
+
+.clr-500 {
+  color: var(--Grey-500);
+}
+
+.header-p {
+  line-height: 140%;
+  letter-spacing: 0.1px;
+}
+
+.card-text > h2 {
+  line-height: 135%;
+  letter-spacing: 0;
+}
+
+.card-text > p {
+  line-height: 160%;
+  letter-spacing: 0.09px;
+}
+/* General Styling */
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-13);
+  font-weight: var(--fw-400);
+  background-color: var(--background);
+  color: var(--Grey-400);
+  display: grid;
+  gap: var(--sp-fluid-60-74);
+}
+
+.primary-header {
+  margin: 0 auto;
+  padding-top: clamp(56px, calc(4.32vw + 39.8px), 102px);
+}
+
+.primary-header-wrapper {
+  display: grid;
+  gap: var(--sp-16);
+  margin-inline: var(--sp-30);
+  max-width: 540px;
+  text-align: center;
+}
+
+.primary-content {
+  padding-bottom: clamp(46px, calc(12.36vw - 0.35px), 178px);
+}
+.primary-content-wrapper {
+  display: grid;
+  justify-content: center;
+  gap: var(--sp-32);
+}
+
+.card {
+  min-width: 314px;
+  max-height: 250px;
+  background-color: var(--White);
+  box-shadow: 0px 15px 30px -11px var(--shadow);
+  margin-inline: var(--sp-30);
+  border-radius: 0.5rem;
+}
+
+.card-wrapper {
+  padding: var(--sp-32);
+  display: grid;
+  gap: var(--sp-32);
+}
+
+.card-text {
+  display: grid;
+  gap: 6px;
+}
+.card-wrapper > img {
+  margin-left: auto;
+}
+
+.center {
+  max-width: max-content;
+  display: grid;
+  gap: var(--sp-32);
+}
+
+.supervisor {
+  border-top: 4px solid var(--Cyan);
+}
+.team {
+  border-top: 4px solid var(--Red);
+}
+.karma {
+  border-top: 4px solid var(--Orange);
+}
+.calculator {
+  border-top: 4px solid var(--Blue);
+}
+
+@media (min-width: 768px) {
+  .primary-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .center {
+    max-width: max-content;
+    display: flex;
+  }
+  .card {
+    max-width: 314px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .center {
+    max-width: max-content;
+    flex-direction: column;
+  }
+
+  .card {
+    max-width: 350px;
+    max-height: 235px;
+  }
+}
